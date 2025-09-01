@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>credito</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-color: rgb(255, 253, 223);
+    }
+
+    .btn-custom {
+        background-color: rgb(255, 253, 223);
+        color: black;
+        border-radius: 0.75em;
+        /* Arredonda com base na unidade em */
+        transition: 0.25s;
+        border: none;
+        padding: 0.8em 2%;
+        /* Ajusta o espaçamento interno com unidades em */
+        font-size: 1em;
+        /* Aumenta o tamanho da fonte */
+    }
+
+    .btn-custom:hover {
+        background-color: rgb(224, 224, 224);
+        /* Clarear o fundo */
+    }
+
+    #pag_selecionada {
+        /* Altera apenas a cor da página selecionada */
+        background-color: rgb(255, 201, 119);
+    }
+
+    #pag_selecionada:hover {
+        background-color: rgb(199, 165, 114);
+    }
+
+
+    #objetivos {
+        /* Navegação inicio */
+        font-size: 2.5em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .icon-text {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-left: 10%;
+        /* Espaçamento da esquerda */
+    }
+
+    .icon-img {
+        width: 40px;
+        margin-right: 15px;
+    }
+
+    h5 {
+        font-size: 1.2em;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Fim */
+    /* img{
+        border-radius: 15px;
+        width: 50%;
+        border: 15px solid rgb(255, 201, 119);
+    } */
+    .card-custom {
+        border-radius: 15px;
+        border: 15px solid rgb(255, 201, 119);
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .card-custom img {
+        justify-content: center;
+        /* Centraliza horizontalmente */
+        align-items: center;
+        height: 80px;
+        width: 80px;
+        margin-bottom: 15px;
+        margin-left: 40%;
+    }
+
+    .card-custom h5 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .card-custom p {
+        font-size: 0.95rem;
+        color: #555;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: center;
+        margin: 40px 0 60px 0;
+        margin-bottom: 10px;
+    }
+
+    .icon-text {
+        display: flex;
+        /* Usar flexbox para alinhar ícone e texto */
+        align-items: center;
+        /* Alinha verticalmente no centro */
+        margin: 20px 0;
+        /* Espaçamento vertical */
+        border: none;
+    }
+
+    .icon-text img {
+        width: 50px;
+        /* Ajuste o tamanho do ícone conforme necessário */
+        margin-right: 10px;
+        /* Espaçamento entre ícone e texto */
+        margin-left: 15%;
+        border: none;
+        border-radius: 0;
+    }
+
+    .icon-text h5 {
+        font-size: 1em;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        /* Mantém a cor do texto */
+    }
+
+    a:hover {
+        text-decoration: underline;
+        /* Adiciona sublinhado ao passar o mouse */
+    }
+
+    #link-none a {
+        /* toda tag <a> que estiver dentro do id=link-none terá a sau seguinte formatação removida */
+        text-decoration: none;
+        /* Remove o sublinhado */
+        color: inherit;
+    }
+
+    .card-custom img {
+        display: block;
+        margin: 0 auto;
+        height: 80px;
+        width: 80px;
+        margin-bottom: 15px;
+    }
+
+    .navbar-custom {
+        height: 6em;
+    }
+
+    #ferramentas {
+        transition: transform 0.5s ease;
+        /* Aumenta a duração da transição para 0.5 segundos */
+    }
+
+    #ferramentas:hover {
+        transform: scale(1.05);
+        /* Aumenta o tamanho em 5% quando o mouse está sobre a imagem */
+    }
+    @media (max-width: 768px) {
+        img {
+            width: 100%; /* Imagem ocupa 100% da largura disponível */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+    }
+
+    /* Ajustes para telas menores que 380px */
+    @media (max-width: 380px) {
+        img {
+            width: 100%; /* Ocupar toda a largura da tela */
+            height: auto; /* Preservar a proporção da imagem */
+            object-fit: cover; /* Preencher a área disponível, cortando o excesso se necessário */
+        }
+
+        .icon-text img {
+            width: 40px; /* Diminuir o tamanho dos ícones em telas muito pequenas */
+        }
+    }
+</style>
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-custom" style="background-color: rgb(26, 188, 254);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex justify-content-around w-100">
+                    <a href="index.html" class="btn btn-custom" >Início</a>
+                    <a href="conteudo.html" class="btn btn-custom">Conteúdo</a>
+                    <a href="graficos.html" class="btn btn-custom">Gráficos</a>
+                    <a href="#" class="btn btn-custom" id="pag_selecionada">Créditos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <center>
+            <h2 class="text-center" id="objetivos" style="margin-bottom: 0.3em;">Ferramentas</h2>
+        </center>
+
+        <div class="row">
+            <!-- Card 1 - Figma -->
+            <div class="col-md-4">
+                <div class="card card-custom" id="ferramentas">
+                    <a href="https://www.figma.com/pt-br/" target="_blank">
+                        <img src="images/credito/icon_figma.png" alt="Figma Logo">
+                        <h5>Figma</h5>
+                        <p>Prototipagem de layouts.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 - VSCode -->
+            <div class="col-md-4">
+                <div class="card card-custom" id="ferramentas">
+                    <a href="https://code.visualstudio.com/" target="_blank">
+                        <img src="images/credito/icon_vscode.png" alt="VSCode Logo">
+                        <h5>VSCode</h5>
+                        <p>Editor de código.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 - HTML -->
+            <div class="col-md-4">
+                <div class="card card-custom" id="ferramentas">
+                    <a href="https://www.w3schools.com/html/" target="_blank">
+                        <img src="images/credito/icon_html.png" alt="HTML Logo">
+                        <h5>HTML</h5>
+                        <p>Estrutura de páginas.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Card 4 - CSS -->
+            <div class="col-md-4">
+                <div class="card card-custom" id="ferramentas">
+                    <a href="https://www.w3schools.com/css/" target="_blank">
+                        <img src="images/credito/icon_css.png" alt="CSS Logo">
+                        <h5>CSS</h5>
+                        <p>Estilo de páginas web.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5 - Bootstrap -->
+            <div class="col-md-4">
+                <div class="card card-custom" id="ferramentas">
+                    <a href="https://getbootstrap.com/" target="_blank">
+                        <img src="images/credito/icon_bootstrap.png" alt="Bootstrap Logo">
+                        <h5>Bootstrap</h5>
+                        <p>Framework CSS.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6 - Google Colab -->
+            <div class="col-md-4">
+                <div class="card card-custom" id="ferramentas">
+                    <a href="https://colab.google/" target="_blank">
+                        <img src="images/credito/icon_colab.png" alt="Google Colab Logo">
+                        <h5>Google Colab</h5>
+                        <p>Execução de Python online.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <center>
+        <h2 class="text-center" id="objetivos">Referências</h2>
+    </center>
+    <div class="icon-text"><!-- Inicio da referência -->
+        <img src="images/credito/icon_internet.png" alt="Ferramentas">
+        <a href="https://datasus.saude.gov.br/informacoes-de-saude-tabnet/">
+            <h3>Banco de dados</h3>
+            <h5>DATASUS – TABNET. Disponível em: https://datasus.saude.gov.br/informacoes-de-saude-tabnet/</h5>
+        </a>
+    </div>
+
+    <div class="icon-text">
+        <img src="images/credito/icon_internet.png" alt="Gráficos">
+        <a href="https://www.paho.org/pt/topicos/transtornos-mentais">
+            <h3>Transtornos mentais</h3>
+            <h5>OPAS. Transtornos mentais. Disponível em: https://www.paho.org/pt/topicos/transtornos-mentais</h5>
+        </a>
+    </div>
+
+    <div class="icon-text">
+        <img src="images/credito/icon_internet.png" alt="Ferramentas">
+        <a href="https://www.paho.org/pt/noticias/2-3-2022-pandemia-covid-19-desencadeia-aumento-25-na-prevalencia-ansiedade-e-depressao-em">
+            <h3>Efeito Pandêmico</h3>
+            <h5>OPAS. Efeito Pandêmico. Disponível em:
+                https://www.paho.org/pt/noticias/2-3-2022-pandemia-covid-19-desencadeia-aumento-25-naprevalencia-ansiedade-e-depressao-em
+            </h5>
+        </a>
+    </div><!-- Fim da referência -->
+
+    <div class="icon-text">
+        <img src="images/credito/icon_internet.png" alt="Ferramentas">
+        <a href="https://andrebeschizza.com.br/burnout-inss-como-conseguir-auxilio-doenca/">
+            <h3>Imagem-Início</h3>
+            <h5>Imagem Disponível em:
+                https://andrebeschizza.com.br/burnout-inss-como-conseguir-auxilio-doenca/
+            </h5>
+        </a>
+    </div>
+
+    <div class="icon-text">
+        <img src="images/credito/icon_internet.png" alt="Ferramentas">
+        <a href="https://regrasparatcc.com.br/metodologia-de-pesquisa-cientifica/">
+            <h3>Imagem-Metodologia</h3>
+            <h5>Imagem Disponível em:
+                https://regrasparatcc.com.br/metodologia-de-pesquisa-cientifica/
+            </h5>
+        </a>
+    </div>
+
+    <div class="container mt-5" style="margin-bottom: 5%;"><!-- Integranes -->
+        <h2 class="text-center" id="objetivos">Integrantes</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-6 text-left icon-text">
+                <img src="images/credito/icon_pessoa.png" alt="Ícone Coleta" class="img-fluid icon-img">
+                <h5 style="font-size:1.25em"><a href="https://github.com/arttzz" target="_blank">Arthur Almeida Lima</a></h5>
+            </div>
+            <div class="col-md-6 text-left icon-text">
+                <img src="images/credito/icon_pessoa.png" alt="Ícone Gráficos" class="img-fluid icon-img">
+                <h5 style="font-size:1.25em"><a href="https://github.com/nokynoy" target="_blank">Daniel Santiago Purificação</a></h5>
+            </div>
+        </div>
+        <div class="row text-center mt-3">
+            <div class="col-md-6 text-left icon-text">
+                <img src="images/credito/icon_pessoa.png" alt="Ícone Comparar" class="img-fluid icon-img">
+                <h5 style="font-size:1.25em"><a href="https://github.com/NicolasHaase" target="_blank">Nicolas Jimenes Haase</a></h5>
+            </div>
+            <div class="col-md-6 text-left icon-text">
+                <img src="images/credito/icon_pessoa.png" alt="Ícone Analisar" class="img-fluid icon-img">
+                <h5 style="font-size:1.25em"><a href="https://github.com/PedroDias-2214" target="_blank">Pedro Dias Guedes Santos</a></h5>
+            </div>
+        </div>
+    </div><!-- Fim de integrantes -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

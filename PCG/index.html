@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+    body {
+        background-color: rgb(255, 253, 223);
+    }
+    figcaption{
+        font-size: 12px;
+        color: gray;
+    }
+
+    .btn-custom {
+        background-color: rgb(255, 253, 223);
+        color: black;
+        border-radius: 0.75em;
+        transition: 0.25s;
+        border: none;
+        padding: 0.8em 2%;
+        font-size: 1em;
+    }
+
+    .btn-custom:hover {
+        background-color: rgb(224, 224, 224);
+    }
+
+    #pag_selecionada {
+        background-color: rgb(255, 201, 119);
+    }
+
+    #pag_selecionada:hover {
+        background-color: rgb(199, 165, 114);
+    }
+
+    /*Título principal*/
+    #titulo {
+        margin-left: 7.5%;
+        font-size: 7.5vw; /* Responsivo com base na largura da viewport */
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+    }
+
+    /*Subtitulo*/
+    #subtitulo {
+        margin-left: 7.5%;
+        margin-bottom: 3.5%;
+        font-size: 4vw; /* Responsivo com base na largura da viewport */
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /*Sumário*/
+    #sumario {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 6vw; /* Responsivo */
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+        font-size: 1.5em;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    img {
+        border-radius: 15px;
+        width: 50%;
+        /* border: 15px solid rgb(255, 201, 119); */
+    }
+    .borda{
+        border: 15px solid rgb(255, 201, 119); 
+    }
+
+    .icon-text {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        border: none;
+    }
+
+    .icon-text img {
+        width: 50px;
+        margin-right: 10px;
+        margin-left: 15%;
+        border: none;
+        border-radius: 0;
+    }
+
+    .icon-text h5 {
+        font-size: 1em;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    #link-none a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .espaco_lateral {
+        margin: 2% 15%;
+    }
+
+    .navbar-custom {
+        height: 6em;
+    }
+
+    /* Media query para dispositivos menores */
+    @media (max-width: 768px) {
+        img {
+            width: 100%; /* Imagem ocupa 100% da largura disponível */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+    }
+
+    /* Ajustes para telas menores que 380px */
+    @media (max-width: 380px) {
+        img {
+            width: 100%; /* Ocupar toda a largura da tela */
+            height: auto; /* Preservar a proporção da imagem */
+            object-fit: cover; /* Preencher a área disponível, cortando o excesso se necessário */
+        }
+
+        .icon-text img {
+            width: 40px; /* Diminuir o tamanho dos ícones em telas muito pequenas */
+        }
+    }
+    .vlibras-container {
+    /* Exemplo de formatação isolada */
+    position: fixed;
+    border: none;
+    padding: 0;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    /* Adicione qualquer outro estilo necessário */
+}
+
+</style>
+
+<body>
+    <div class="vlibras-container">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js" style="border: none;"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-custom" style="background-color: rgb(26, 188, 254);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex justify-content-around w-100">
+                    <a href="#" class="btn btn-custom" id="pag_selecionada">Início</a>
+                    <a href="conteudo.html" class="btn btn-custom">Conteúdo</a>
+                    <a href="graficos.html" class="btn btn-custom">Gráficos</a>
+                    <a href="credito.html" class="btn btn-custom">Créditos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h1 id="titulo">Transtornos<br>Mentais</h1>
+    <h2 id="subtitulo">relacionados ao ambiente de trabalho</h2>
+
+    <center><figure>
+        <img src="images/index/img1.jpg " alt="" class="img-fluid borda">
+        <figcaption>Trabalhador tendo burnout por excesso de trabalho - Foto: INSS</figcaption>
+    </figure>
+        <p class="espaco_lateral">De acordo com a Organização Pan-Americana da Saúde (OPAS), os transtornos mentais são
+            geralmente caracterizados por uma combinação de pensamentos, percepções, emoções e comportamentos anormais,
+            que podem impactar as relações com outras pessoas. Nos últimos anos, houve uma crescente taxa de transtornos
+            relacionados ao ambiente de trabalho, especialmente nos anos de 2022 e 2023. O aumento da pressão por
+            produtividade, aliado a fatores como o isolamento social durante a pandemia e o esgotamento físico e
+            emocional, contribuiu para que mais trabalhadores desenvolvessem condições como ansiedade, depressão e
+            síndrome de burnout. </p>
+    </center>
+
+    <center>
+        <h2 id="sumario">Sumário</h2>
+    </center>
+
+    <div class="icon-text">
+        <img src="images/conteudo/icons/icon_metodologia.png" alt="Ferramentas">
+        <a href="conteudo.html">
+            <h3>Metodologia</h3>
+            <h5>Metodologia utilizada para a criação da página web</h5>
+        </a>
+    </div>
+    <div class="icon-text">
+        <img src="images/index/icons/icon-graficos.png" alt="Gráficos">
+        <a href="graficos.html">
+            <h3>Gráficos</h3>
+            <h5>Gráficos utilizados na pesquisa</h5>
+        </a>
+    </div>
+
+    <div class="icon-text" style="margin-bottom: 5%;">
+        <img src="images/index/icons/icon-ferramentas.png" alt="Ferramentas">
+        <a href="credito.html">
+            <h3>Ferramentas</h3>
+            <h5>Ferramentas utilizadas na pesquisa</h5>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
